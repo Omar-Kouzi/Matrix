@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./code/styles.css" />
+    <title>E-commerce</title>
+  </head>
+  <body>
+    <nav id="navPlaceholder"></nav>
+    <main id="mainContent"></main>
+    <footer id="footerPlaceholder"></footer>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(function () {
+        $("#navPlaceholder").load("./code/html/components/navbar.html", function () {
+          highlightActiveLink();
+        });
+        $("#footerPlaceholder").load("./code/html/components/footer.html", function () {
+          highlightActiveLink();
+        });
+
+        function loadContent() {
+          let page = sessionStorage.id || "recipes";
+          let pageUrl = `./code/html/pages/${page}.html`;
+          $("#mainContent").load(pageUrl);
+        }
+
+        loadContent();
+
+        $(document).on("click", ".nava", function (e) {
+          let targetPage = $(this).data("page");
+          sessionStorage.id = targetPage;
+          loadContent();
+          highlightActiveLink();
+          e.preventDefault();
+        });
+
+        function highlightActiveLink() {
+          let activePage = sessionStorage.id || "recipes";
+          $(".nava").removeClass("active");
+          $(`.nava[data-page='${activePage}']`).addClass("active");
+        }
+      });
+    </script>
+  </body>
+</html>

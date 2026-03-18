@@ -1,0 +1,86 @@
+.recipepage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 10px;
+}
+.recipeimg-page {
+  
+  width: 100vw;
+  height: 50vh;
+}
+.recipeprice-page {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/* *{
+  border:1px black;
+  border-style:solid ;
+} */
+
+.Mise-En-Place-img {
+  height: 300px;
+  width: 300px;
+}
+.Mise-En-Place {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  width: 95vw;
+  font-size: large;
+}
+.Method-step {
+  font-size: large;
+  line-height: 30px;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  margin: 25px;
+  width: 90vw;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+  background-color: var(--accent);
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: var(--accent);
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.page {
+  text-align: center;
+}
+.quantity-control {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.Method h2,
+.Recipe-Title{
+  padding-left: 10px;
+}

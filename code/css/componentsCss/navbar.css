@@ -1,0 +1,37 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 20px 15px;
+  background-color: var(--secondary);
+}
+.navbar div {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: space-be;
+  align-items: center;
+}
+
+.nava {
+  display: block;
+  position: relative;
+  color: var(--text);
+  padding: 8px 10px;
+  text-decoration: none;
+}
+.nava::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--text);
+  transition-duration: 500ms;
+}
+
+.nava:hover::before,
+.nava.active::before {
+  width: 100%;
+}
+

@@ -1,0 +1,65 @@
+.homeMain {
+  background: url("../assets/images/pexels-karolina-grabowska-4041392.jpg")
+    no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.homeint {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 95vw;
+  height: 85vh;
+  padding-top: 15vh;
+  padding-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--text);
+}
+
+.homeMain * {
+  position: relative;
+  z-index: 2;
+}
+.homeAbout {
+  height: 60vh;
+  /* padding: 5vh 5vw; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.homeAboutText {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0px 20px;
+}
+.homeAboutimg {
+  width: 50%;
+  background: url("../assets/images/pexels-karolina-grabowska-4041392.jpg")
+    no-repeat;
+  background-size: cover;
+}
+.homeRecipes {
+  padding: 10px;
+}
+.homerecipes {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+#perfumeName {
+  transition: opacity 0.5s ease-in-out;
+}
+.perfumeNamebox {
+  border: 1px solid;
+  width: 40vh;
+  padding: 5px 10px;
+}
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}

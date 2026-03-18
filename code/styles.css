@@ -1,0 +1,95 @@
+/* pages styles */
+@import url(./css/home.css);
+@import url(./css/recipes.css);
+@import url(./css/recipe.css);
+@import url(./css/contact.css);
+@import url(./css/about.css);
+/* components styles */
+@import url(./css/componentsCss/navbar.css);
+@import url(./css/componentsCss/footer.css);
+@import url(./css/componentsCss/recipe.css);
+/* font */
+@import url("https://fonts.googleapis.com/css?family=Noto%20Sans%20Kayah%20Li:700|Noto%20Sans%20Kayah%20Li:400");
+/* colors */
+/* :root[data-theme="light"] {
+  --text: #090606;
+  --background: #faf5f7;
+  --primary: #33000c;
+  --secondary: #d194a3;
+  --accent: #ce788c;
+}
+:root[data-theme="dark"] {
+  --text: #f9f6f6;
+  --background: #0a0507;
+  --primary: #ffccd8;
+  --secondary: #6b2e3d;
+  --accent: #873145;
+} */
+:root {
+  --text: #f9f6f6;
+  --background: #0a0507;
+  --static: #0f0f0f;
+  --primary: #ffccd8;
+  --secondary: #6b2e3d;
+  --accent: #873145;
+}
+
+* {
+  font-family: "Noto Sans Kayah Li";
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid; */
+}
+#main-content {
+  height: 100vh;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+html {
+  font-size: 100%; /* 16px */
+}
+h1 {
+  font-size: 4.21rem; /* 67.36px */
+}
+h2 {
+  font-size: 3.158rem; /* 50.56px */
+}
+h3 {
+  font-size: 2.369rem; /* 37.92px */
+}
+h4 {
+  font-size: 1.777rem; /* 28.48px */
+}
+h5 {
+  font-size: 1.333rem; /* 21.28px */
+}
+small {
+  font-size: 0.75rem; /* 12px */
+}
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+button {
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 5px 10px;
+  border: 1px solid var(--static);
+  border-radius: 10px;
+}
+button:hover {
+  background-color: var(--accent);
+}
+#mainContent{
+  background-color: var(--background);
+  color: var(--text);
+}

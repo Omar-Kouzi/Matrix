@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <section class="recipes">
+    <details >
+      <summary>Filter</summary>
+      <div class="filter">
+        <form id="searchForm">
+        <input type="text" id="filterInput" placeholder="Filter recipes..." />
+        <button type="submit">search</button>
+       
+      </form>
+      <select id="sortSelect">
+        <option value="default">Default</option>
+        <option value="az">A-Z</option>
+        <option value="za">Z-A</option>
+        <option value="priceHighLow">Price: High to Low</option>
+        <option value="priceLowHigh">Price: Low to High</option>
+        <option value="obtained">Obtained - Not Obtained</option>
+      </select>
+      </div>
+       <label>
+          <input type="checkbox" id="obtainedFilter" /> Show Obtained Recipes Only
+        </label>
+    </details>
+    <hr />
+    <section id="recipesContainer" class="recipesContainer"></section>
+    <script src="./code/js/recipes.js"></script>
+  </section>
+</html>

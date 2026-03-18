@@ -1,0 +1,34 @@
+#recipe {
+  height: 50vh;
+  width: 35vh;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipeimg-container {
+  display: flex;
+  justify-content: center;
+}
+
+.recipeimg {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 20px;
+}
+.recipeDescription {
+  font-size: 0.9em;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.obtained button {
+  border: 1px solid #ccc;
+}
+.not-obtained button {
+  border: 1px solid #ff0000;
+}
