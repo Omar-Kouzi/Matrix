@@ -5,7 +5,6 @@
   padding-bottom: 10px;
 }
 .recipeimg-page {
-  
   width: 100vw;
   height: 50vh;
 }
@@ -81,6 +80,12 @@
   justify-content: space-around;
 }
 .Method h2,
-.Recipe-Title{
+.Recipe-Title {
   padding-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .Mise-En-Place {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
