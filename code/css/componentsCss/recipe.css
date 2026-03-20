@@ -26,9 +26,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.obtained button {
+.aproved button {
   border: 1px solid #ccc;
 }
-.not-obtained button {
+.not-aproved button {
   border: 1px solid #ff0000;
 }

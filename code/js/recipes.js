@@ -20,11 +20,11 @@ function displayRecipes(recipes) {
     const recipeCard = document.createElement("div");
     recipeCard.id = "recipe";
 
-    // Add class based on the obtained field
-    if (recipe.obtained === "true") {
-      recipeCard.classList.add("obtained");
+    // Add class based on the aproved field
+    if (recipe.aproved === "true") {
+      recipeCard.classList.add("aproved");
     } else {
-      recipeCard.classList.add("not-obtained");
+      recipeCard.classList.add("not-aproved");
     }
 
     recipeCard.innerHTML = `
@@ -45,20 +45,20 @@ function displayRecipes(recipes) {
 function filterAndSortRecipes() {
   const searchTerm = document.getElementById("filterInput").value.toLowerCase();
   const sortMethod = document.getElementById("sortSelect").value;
-  const obtainedFilter = document.getElementById("obtainedFilter").checked;
+  const aprovedFilter = document.getElementById("aprovedFilter").checked;
 
-  let filtered = recipeData.filter((recipe) => {
+  let filteredRecipes = recipesData.filter((recipe) => {
     const matchesSearchTerm =
       recipe.title.toLowerCase().includes(searchTerm) ||
       recipe.description.toLowerCase().includes(searchTerm) ||
       recipe.price.toString().includes(searchTerm) ||
       recipe.type.toLowerCase().includes(searchTerm);
 
-    const matchesObtainedFilter = obtainedFilter
-      ? recipe.obtained === "true"
+    const matchesaprovedFilter = aprovedFilter
+      ? recipe.aproved === "true"
       : true;
 
-    return matchesSearchTerm && matchesObtainedFilter;
+    return matchesSearchTerm && matchesaprovedFilter;
   });
 
   switch (sortMethod) {
@@ -74,9 +74,9 @@ function filterAndSortRecipes() {
     case "priceLowHigh":
       filteredRecipes.sort((a, b) => a.price - b.price);
       break;
-    case "obtained":
+    case "aproved":
       filteredRecipes.sort((a, b) => {
-        return (a.obtained === "false") - (b.obtained === "false");
+        return (a.aproved === "false") - (b.aproved === "false");
       });
       break;
   }
@@ -90,4 +90,4 @@ document.getElementById("searchForm").addEventListener("submit", function (event
 });
 
 document.getElementById("sortSelect").addEventListener("change", filterAndSortRecipes);
-document.getElementById("obtainedFilter").addEventListener("change", filterAndSortRecipes);
+document.getElementById("aprovedFilter").addEventListener("change", filterAndSortRecipes);
