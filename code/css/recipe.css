@@ -1,8 +1,8 @@
-.recipepage-container {
+.recipe-Container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding-bottom: 10px;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 .recipeimg-page {
   width: 100vw;
@@ -73,6 +73,9 @@
 
 .page {
   text-align: center;
+}
+.page-controls {
+  position: relative;
 }
 .quantity-control {
   padding: 10px;

@@ -1,0 +1,44 @@
+.ingredient-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.ingredient-row input,
+.method-step {
+  padding: 6px;
+  border-radius: 5px;
+}
+.method-step {
+  width: 350px;
+  min-height: fit-content;
+}
+.removeIngredient {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.recipe-search-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: white;
+}
+#editRecipeForm,
+#addRecipeForm {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 10px;
+  margin: 50px 0px 10px 10px;
+}
+#form-title,
+#editSearch {
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.search-bar {
+  display: flex;
+  gap: 5px;
+}

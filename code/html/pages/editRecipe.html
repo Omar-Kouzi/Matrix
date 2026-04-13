@@ -1,0 +1,36 @@
+<div class="edit-recipe">
+  <h2>Select Recipe</h2>
+
+  <div class="search-bar">
+    <input type="text" id="editSearch" placeholder="Search recipe..." />
+
+    <button type="button" id="searchRecipeBtn">Search</button>
+  </div>
+
+  <div id="editSearchResults" class="recipesContainer"></div>
+
+  <hr />
+
+  <form id="editRecipeForm">
+    <input id="editID" type="hidden" />
+
+    <input id="form-title" placeholder="Title" />
+
+    <img id="imagePreview" src="https://placehold.jp/150x150.png" />
+
+    <input type="file" id="imageFile" />
+
+    <div id="ingredientsContainer"></div>
+
+    <button type="button" id="addIngredientBtn">+ Ingredient</button>
+
+    <label>
+      Approved
+      <input type="checkbox" id="approved" />
+    </label>
+
+    <button type="submit">Save</button>
+  </form>
+</div>
+
+<script src="./code/js/editRecipe.js"></script>

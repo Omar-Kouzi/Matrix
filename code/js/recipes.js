@@ -1,26 +1,30 @@
 let recipesData = [];
 
-fetch("./code/assets/data.json")
+fetch("/recipes")
   .then((response) => response.json())
   .then((data) => {
     recipesData = data;
-    displayRecipes(data);
+    displayRecipes(recipesData);
   })
-  .catch((error) => console.error("Error fetching data:", error));
+  .catch((error) =>
+    console.error("Error fetching data:", error)
+  );
 
-function GotoRecipe(recipeid){
-  sessionStorage.recipeID = recipeid
+function GotoRecipe(recipeid) {
+  sessionStorage.recipeID = recipeid;
   console.log(recipeid);
 }
 
 function displayRecipes(recipes) {
-  const recipesContainer = document.getElementById("recipesContainer");
+  const recipesContainer =
+    document.getElementById("recipesContainer");
+
   recipesContainer.innerHTML = "";
+
   recipes.forEach((recipe) => {
     const recipeCard = document.createElement("div");
     recipeCard.id = "recipe";
 
-    // Add class based on the aproved field
     if (recipe.aproved === "true") {
       recipeCard.classList.add("aproved");
     } else {
@@ -28,55 +32,95 @@ function displayRecipes(recipes) {
     }
 
     recipeCard.innerHTML = `
-    <div class="recipeimg-container">
-      <img src="${recipe.image}" alt="img" class="recipeimg" />
-    </div>
-    <h5>${recipe.title}</h5>
-  
-    <button>    
-    <a href="../pages/recipe.html" class="nava" data-page="recipe" onClick="GotoRecipe('${recipe.id}')">Buy Now</a>
-    </button>
-  `;
-  
+      <div class="recipeimg-container">
+        <img 
+          src="${recipe.image || 'https://placehold.jp/150x150.png'}" 
+          alt="img" 
+          class="recipeimg" 
+        />
+      </div>
+
+      <h5>${recipe.title}</h5>
+    
+      <button>    
+        <a 
+          href="../pages/recipe.html" 
+          class="nava" 
+          data-page="recipe" 
+          onClick="GotoRecipe('${recipe.id}')"
+        >
+          Buy Now
+        </a>
+      </button>
+    `;
+
     recipesContainer.appendChild(recipeCard);
   });
 }
 
+
+// ================= FILTER =================
+
 function filterAndSortRecipes() {
-  const searchTerm = document.getElementById("filterInput").value.toLowerCase();
-  const sortMethod = document.getElementById("sortSelect").value;
-  const aprovedFilter = document.getElementById("aprovedFilter").checked;
+  const searchTerm = document
+    .getElementById("filterInput")
+    .value.toLowerCase()
+    .trim();
 
-  let filteredRecipes = recipesData.filter((recipe) => {
-    const matchesSearchTerm =
-      recipe.title.toLowerCase().includes(searchTerm) ||
-      recipe.description.toLowerCase().includes(searchTerm) ||
-      recipe.price.toString().includes(searchTerm) ||
-      recipe.type.toLowerCase().includes(searchTerm);
+  const sortMethod =
+    document.getElementById("sortSelect").value;
 
-    const matchesaprovedFilter = aprovedFilter
-      ? recipe.aproved === "true"
-      : true;
+  const aprovedFilter =
+    document.getElementById("aprovedFilter").checked;
 
-    return matchesSearchTerm && matchesaprovedFilter;
-  });
+  let filteredRecipes =
+    recipesData.filter((recipe) => {
+
+      const titleMatch =
+        recipe.title
+          .toLowerCase()
+          .includes(searchTerm);
+
+      const ingredientMatch =
+        recipe.ingredients?.some((ing) =>
+          ing.name
+            .toLowerCase()
+            .includes(searchTerm)
+        );
+
+      const matchesSearchTerm =
+        titleMatch || ingredientMatch;
+
+      const matchesaprovedFilter =
+        aprovedFilter
+          ? recipe.aproved === "true"
+          : true;
+
+      return (
+        matchesSearchTerm &&
+        matchesaprovedFilter
+      );
+    });
 
   switch (sortMethod) {
     case "az":
-      filteredRecipes.sort((a, b) => a.title.localeCompare(b.title));
+      filteredRecipes.sort((a, b) =>
+        a.title.localeCompare(b.title)
+      );
       break;
+
     case "za":
-      filteredRecipes.sort((a, b) => b.title.localeCompare(a.title));
+      filteredRecipes.sort((a, b) =>
+        b.title.localeCompare(a.title)
+      );
       break;
-    case "priceHighLow":
-      filteredRecipes.sort((a, b) => b.price - a.price);
-      break;
-    case "priceLowHigh":
-      filteredRecipes.sort((a, b) => a.price - b.price);
-      break;
+
     case "aproved":
       filteredRecipes.sort((a, b) => {
-        return (a.aproved === "false") - (b.aproved === "false");
+        return (
+          (a.aproved === "false") -
+          (b.aproved === "false")
+        );
       });
       break;
   }
@@ -84,10 +128,23 @@ function filterAndSortRecipes() {
   displayRecipes(filteredRecipes);
 }
 
-document.getElementById("searchForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-  filterAndSortRecipes();
-});
 
-document.getElementById("sortSelect").addEventListener("change", filterAndSortRecipes);
-document.getElementById("aprovedFilter").addEventListener("change", filterAndSortRecipes);
+// events
+document
+  .getElementById("searchForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    filterAndSortRecipes();
+  });
+
+document
+  .getElementById("sortSelect")
+  .addEventListener("change", filterAndSortRecipes);
+
+document
+  .getElementById("aprovedFilter")
+  .addEventListener("change", filterAndSortRecipes);
+
+document
+  .getElementById("filterInput")
+  .addEventListener("input", filterAndSortRecipes);

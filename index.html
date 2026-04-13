@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,19 +15,28 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
       $(function () {
-        $("#navPlaceholder").load("./code/html/components/navbar.html", function () {
-          highlightActiveLink();
-        });
-        $("#footerPlaceholder").load("./code/html/components/footer.html", function () {
-          highlightActiveLink();
-        });
+        $("#navPlaceholder").load(
+          "./code/html/components/navbar.html",
+          function () {
+            highlightActiveLink();
+          },
+        );
+        $("#footerPlaceholder").load(
+          "./code/html/components/footer.html",
+          function () {
+            highlightActiveLink();
+          },
+        );
 
         function loadContent() {
           let page = sessionStorage.id || "recipes";
           let pageUrl = `./code/html/pages/${page}.html`;
-          $("#mainContent").load(pageUrl);
-        }
 
+          $("#mainContent").load(pageUrl, function () {
+            // 🔥 RUN PAGE JS MANUALLY
+            loadPageScript(page);
+          });
+        }
         loadContent();
 
         $(document).on("click", ".nava", function (e) {
@@ -42,6 +51,17 @@
           let activePage = sessionStorage.id || "recipes";
           $(".nava").removeClass("active");
           $(`.nava[data-page='${activePage}']`).addClass("active");
+        }
+        function loadPageScript(page) {
+          // remove old script if exists
+          $("#pageScript").remove();
+
+          let script = document.createElement("script");
+          script.id = "pageScript";
+
+          script.src = `./code/js/${page}.js`;
+
+          document.body.appendChild(script);
         }
       });
     </script>

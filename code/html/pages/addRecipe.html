@@ -1,0 +1,29 @@
+<section class="add-recipe">
+  <h2>Add Recipe</h2>
+
+  <form id="addRecipeForm">
+    <input type="text" id="form-title" placeholder="Recipe Title" required />
+    <label>Recipe Image</label>
+    <input type="file" id="imageFile" accept="image/*" />
+
+    <br />
+
+    <img id="imagePreview" src="https://placehold.jp/150x150.png" width="150" />
+    <h4>Ingredients</h4>
+
+    <div id="ingredientsContainer"></div>
+
+    <button type="button" id="addIngredientBtn">+ Add Ingredient</button>
+
+    <div id="methodContainer"></div>
+    <button type="button" id="addMethodBtn">+ Add Method</button>
+    <label>
+      Approved
+      <input type="checkbox" id="approved" />
+    </label>
+
+    <button type="submit">Add Recipe</button>
+  </form>
+</section>
+
+<script src="./code/js/addRecipe.js"></script>

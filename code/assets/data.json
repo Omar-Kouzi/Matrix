@@ -1,529 +1,1786 @@
 [
   {
     "id": "1",
-    "title": "Cupcake",
+    "title": "Cup Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Baking Soda", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Cacao", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Espresso Shot", "quantity": "3" },
-      { "name": "Frosting", "quantity": "3" }
+      {
+        "name": "Milk",
+        "quantity": "150g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "150g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "2 pcs"
+      },
+      {
+        "name": "Flour",
+        "quantity": "160g"
+      },
+      {
+        "name": "Baking Soda",
+        "quantity": "6g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "10g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "40g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "160g"
+      },
+      {
+        "name": "Espresso Shot",
+        "quantity": "20g"
+      },
+      {
+        "name": "Frosting",
+        "quantity": "Sub Recipe"
+      }
     ],
-    "method": ["", "", ""],
-    "aproved": "false",
-    "catigories": ["dessert"]
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "true",
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "2",
     "title": "Mufins",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Sunflower Oil", "quantity": "3" },
-      { "name": "yogurt", "quantity": "600g" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Cacao", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Chocolate 50%", "quantity": "3" },
-      { "name": "Salt", "quantity": "3" }
+      {
+        "name": "Sunflower Oil",
+        "quantity": "200ml"
+      },
+      {
+        "name": "yogurt",
+        "quantity": "120g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "4 pcs"
+      },
+      {
+        "name": "Flour",
+        "quantity": "200g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "2 tbsp"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "60g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "200g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "5g"
+      },
+      {
+        "name": "Chocolate 50%",
+        "quantity": "100g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "2g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "3",
     "title": "English Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Sunflower Oil", "quantity": "3" },
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Cacao", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Salt", "quantity": "3" }
+      {
+        "name": "Sunflower Oil",
+        "quantity": "62g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "125g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "100g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "300g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "10g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "10g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "150g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "2g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "true",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "4",
     "title": "Shifon Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Egg", "quantity": "3" }
+      {
+        "name": "Milk",
+        "quantity": ""
+      },
+      {
+        "name": "Egg",
+        "quantity": ""
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "5",
     "title": "Crepe",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Biscuit", "quantity": "3" }
+      {
+        "name": "Milk",
+        "quantity": "180g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "120g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "2g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "6",
     "title": "Pan Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Biscuit", "quantity": "3" }
+      {
+        "name": "Sunflower Oil",
+        "quantity": "50g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "300g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "1g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "250g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "20g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "50g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "2g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "2g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "7",
     "title": "Churos",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Water", "quantity": "3" }
+      {
+        "name": "Flour",
+        "quantity": "1cup"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "1tsp"
+      },
+      {
+        "name": "Egg",
+        "quantity": "1 pcs"
+      },
+      {
+        "name": "Butter",
+        "quantity": "0.25 cup"
+      },
+      {
+        "name": "Water",
+        "quantity": "1cup"
+      },
+      {
+        "name": "Salt",
+        "quantity": "1tsp"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "8",
     "title": "Matilda Fudge Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Sunflower Oil", "quantity": "3" },
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Baking Soda", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Cacao", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Chocolate 50%", "quantity": "3" },
-      { "name": "Espresso Shot", "quantity": "3" },
-      { "name": "Salt", "quantity": "3" },
-      { "name": "White Vinegar", "quantity": "3" },
-      { "name": "Ganache", "quantity": "3" }
+      {
+        "name": "Sunflower Oil",
+        "quantity": "180g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "360g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "175g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "320g"
+      },
+      {
+        "name": "Baking Soda",
+        "quantity": "5g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "6g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "100g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "450g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "1 tbsp"
+      },
+      {
+        "name": "Chocolate 50%",
+        "quantity": "150g"
+      },
+      {
+        "name": "Espresso Shot",
+        "quantity": "20 ml"
+      },
+      {
+        "name": "Salt",
+        "quantity": "5g"
+      },
+      {
+        "name": "White Vinegar",
+        "quantity": "1 tbsp"
+      },
+      {
+        "name": "Ganache",
+        "quantity": "Sub Recipe"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "9",
     "title": "Brownies",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Baking Soda", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Cacao", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Chocolate 50%", "quantity": "3" },
-      { "name": "Espresso Shot", "quantity": "3" },
-      { "name": "Salt", "quantity": "3" }
+      {
+        "name": "Sunflower Oil",
+        "quantity": "40g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "1 pcs"
+      },
+      {
+        "name": "Flour",
+        "quantity": "35g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "20g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "90g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "2g"
+      },
+      {
+        "name": "Chocolate 70%",
+        "quantity": "40g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "10",
     "title": "Red Velvet",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Cacao", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Food Coloring", "quantity": "3" },
-      { "name": "Salt", "quantity": "3" },
-      { "name": "Ganache", "quantity": "3" }
+      {
+        "name": "Milk",
+        "quantity": ""
+      },
+      {
+        "name": "Butter",
+        "quantity": "g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "g"
+      },
+      {
+        "name": "Food Coloring",
+        "quantity": "g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "g"
+      },
+      {
+        "name": "Ganache",
+        "quantity": "g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "11",
     "title": "Carrot Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Carrot", "quantity": "3" },
-      { "name": "Ganache", "quantity": "3" }
+      {
+        "name": "Milk",
+        "quantity": "600g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "g"
+      },
+      {
+        "name": "Carrot",
+        "quantity": "g"
+      },
+      {
+        "name": "Ganache",
+        "quantity": "g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "12",
     "title": "Lava Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Egg Yolk", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Chocolate 50%", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Salt", "quantity": "3" }
+      {
+        "name": "Butter",
+        "quantity": "100g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "2 pcs"
+      },
+      {
+        "name": "Egg Yolk",
+        "quantity": "2 pcs"
+      },
+      {
+        "name": "Flour",
+        "quantity": "50g"
+      },
+      {
+        "name": "Chocolate 50%",
+        "quantity": "180g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "4g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "2g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
-    "title": "Lazay Cake",
+    "id": "13",
+    "title": "Lazy Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Biscuit", "quantity": "3" },
-      { "name": "Cacao", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Honey", "quantity": "3" },
-      { "name": "Water", "quantity": "3" }
+      {
+        "name": "Butter",
+        "quantity": "200g"
+      },
+      {
+        "name": "Biscuit",
+        "quantity": "340g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "40g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "100g"
+      },
+      {
+        "name": "Honey",
+        "quantity": "85g"
+      },
+      {
+        "name": "Water",
+        "quantity": "50g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "true",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "14",
     "title": "Cookie Classic",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Biscuit", "quantity": "3" }
+      {
+        "name": "Butter",
+        "quantity": "g"
+      },
+      {
+        "name": "Biscuit",
+        "quantity": "g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "15",
     "title": "Cookie Brownie",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Biscuit", "quantity": "3" }
+      {
+        "name": "Butter",
+        "quantity": "g"
+      },
+      {
+        "name": "Biscuit",
+        "quantity": "g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "16",
     "title": "Cookie Velvet",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Biscuit", "quantity": "3" }
+      {
+        "name": "Butter",
+        "quantity": "g"
+      },
+      {
+        "name": "Biscuit",
+        "quantity": "g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "17",
     "title": "Cookie Cake",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Biscuit", "quantity": "3" }
+      {
+        "name": "Butter",
+        "quantity": "g"
+      },
+      {
+        "name": "Biscuit",
+        "quantity": "g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "18",
     "title": "Macaron",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Egg", "quantity": "3" },
-      { "name": "Egg White", "quantity": "3" },
-      { "name": "Almon Flour", "quantity": "3" },
-      { "name": "Sugar Powder", "quantity": "3" },
-      { "name": "Food Coloring", "quantity": "3" },
-      { "name": "Filling", "quantity": "3" }
+      {
+        "name": "Egg White",
+        "quantity": "100g"
+      },
+      {
+        "name": "Almon Flour",
+        "quantity": "100g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "100g"
+      },
+      {
+        "name": "Sugar Powder",
+        "quantity": "100g"
+      },
+      {
+        "name": "Food Coloring",
+        "quantity": "0.5g"
+      },
+      {
+        "name": "Filling",
+        "quantity": "Sub Recipe"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "19",
     "title": "Ghraibeh",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Ghee", "quantity": "3" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Sugar Powder", "quantity": "3" }
+      {
+        "name": "Ghee",
+        "quantity": "300g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "500g"
+      },
+      {
+        "name": "Sugar Powder",
+        "quantity": "125g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "true",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "20",
+    "title": "Dip Eid Cookie",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Ghee",
+        "quantity": "250g"
+      },
+      {
+        "name": "Milk Powder",
+        "quantity": "1.5 tbsp"
+      },
+      {
+        "name": "Flour",
+        "quantity": "500g"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "1.5 tbsp"
+      },
+      {
+        "name": "Instant Yeast",
+        "quantity": "1 tbsp"
+      },
+      {
+        "name": "Sesame White",
+        "quantity": "1 tbsp"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "2 sbsp"
+      },
+      {
+        "name": "Vanila",
+        "quantity": "5g"
+      },
+      {
+        "name": "Water",
+        "quantity": "70g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "2"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "true",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "21",
     "title": "Hareseh",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Ghee", "quantity": "3" },
-      { "name": "Yogurt", "quantity": "600g" },
-      { "name": "Semolina Medium", "quantity": "3" },
-      { "name": "Baking Soda", "quantity": "3" },
-      { "name": "Baking Powder", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Syrup", "quantity": "3" },
-      { "name": "Salt", "quantity": "3" }
+      {
+        "name": "Ghee",
+        "quantity": "3 tbsp"
+      },
+      {
+        "name": "Yogurt",
+        "quantity": "600g"
+      },
+      {
+        "name": "Semolina Medium",
+        "quantity": "480g"
+      },
+      {
+        "name": "Baking Soda",
+        "quantity": "1 tsp"
+      },
+      {
+        "name": "Baking Powder",
+        "quantity": "10g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "150g"
+      },
+      {
+        "name": "Syrup",
+        "quantity": "200ml"
+      },
+      {
+        "name": "Salt",
+        "quantity": "2g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "22",
     "title": "Basbusah",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Ghee", "quantity": "3" },
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Semolina Medium", "quantity": "3" },
-      { "name": "Coconut Powder", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Honey", "quantity": "3" },
-      { "name": "Syrup", "quantity": "3" }
+      {
+        "name": "Ghee",
+        "quantity": "160g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "160g"
+      },
+      {
+        "name": "Semolina Medium",
+        "quantity": "500g"
+      },
+      {
+        "name": "Coconut Powder",
+        "quantity": "28g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "170g"
+      },
+      {
+        "name": "Honey",
+        "quantity": "50g"
+      },
+      {
+        "name": "Syrup",
+        "quantity": "200ml"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "23",
     "title": "Knefah",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Ghee", "quantity": "3" },
-      { "name": "Milk Powder", "quantity": "600g" },
-      { "name": "Semolina Medium", "quantity": "3" },
-      { "name": "Baking Soda", "quantity": "3" },
-      { "name": "Instant Yeast", "quantity": "3" },
-      { "name": "Mahlab", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Syrup", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Water", "quantity": "3" },
-      { "name": "Cheese", "quantity": "3" }
+      {
+        "name": "Ghee",
+        "quantity": "g"
+      },
+      {
+        "name": "Milk Powder",
+        "quantity": "600g"
+      },
+      {
+        "name": "Semolina Medium",
+        "quantity": "g"
+      },
+      {
+        "name": "Baking Soda",
+        "quantity": "g"
+      },
+      {
+        "name": "Instant Yeast",
+        "quantity": "g"
+      },
+      {
+        "name": "Mahlab",
+        "quantity": "g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "g"
+      },
+      {
+        "name": "Syrup",
+        "quantity": "g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "g"
+      },
+      {
+        "name": "Water",
+        "quantity": "g"
+      },
+      {
+        "name": "Cheese",
+        "quantity": "g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "24",
     "title": "Ma'moul Mad",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Ghee", "quantity": "3" },
-      { "name": "Milk Powder", "quantity": "600g" },
-      { "name": "Semolina Medium", "quantity": "3" },
-      { "name": "Baking Soda", "quantity": "3" },
-      { "name": "Instant Yeast", "quantity": "3" },
-      { "name": "Mahlab", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Syrup", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Water", "quantity": "3" },
-      { "name": "Kashta", "quantity": "3" }
+      {
+        "name": "Ghee",
+        "quantity": "240g"
+      },
+      {
+        "name": "Milk Powder",
+        "quantity": "30g"
+      },
+      {
+        "name": "Semolina Medium",
+        "quantity": "600g"
+      },
+      {
+        "name": "Baking Soda",
+        "quantity": "0.5 tsp"
+      },
+      {
+        "name": "Instant Yeast",
+        "quantity": "1 tsp"
+      },
+      {
+        "name": "Mahlab",
+        "quantity": "0.25 tsp"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "120g"
+      },
+      {
+        "name": "Syrup",
+        "quantity": "200ml"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "2g"
+      },
+      {
+        "name": "Water",
+        "quantity": "210g"
+      },
+      {
+        "name": "Kashta",
+        "quantity": "500g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "true",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "25",
     "title": "Ma'moul",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Ghee", "quantity": "3" },
-      { "name": "Milk Powder", "quantity": "600g" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Mahlab", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Syrup", "quantity": "3" },
-      { "name": "Vanilla", "quantity": "3" },
-      { "name": "Water", "quantity": "3" },
-      { "name": "Filling Nut", "quantity": "3" },
-      { "name": "Ghee", "quantity": "3" },
-      { "name": "Syrup", "quantity": "3" },
-      { "name": "Raha", "quantity": "3" },
-      { "name": "Mazaher", "quantity": "3" }
+      {
+        "name": "Ghee",
+        "quantity": "500g"
+      },
+      {
+        "name": "Milk Powder",
+        "quantity": "50g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "1000g"
+      },
+      {
+        "name": "Mahlab",
+        "quantity": "10g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "200g"
+      },
+      {
+        "name": "Syrup",
+        "quantity": "40g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "10g"
+      },
+      {
+        "name": "Water",
+        "quantity": "200g"
+      },
+      {
+        "name": "Filling Nut",
+        "quantity": "500g"
+      },
+      {
+        "name": "Ghee",
+        "quantity": "10g"
+      },
+      {
+        "name": "Syrup",
+        "quantity": "50g"
+      },
+      {
+        "name": "Raha",
+        "quantity": "7pcs"
+      },
+      {
+        "name": "Mazaher",
+        "quantity": "5 drops"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
-    "title": "Ma'moul",
-    "image": "https://placehold.jp/150x150.png",
-    "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Milk", "quantity": "600g" },
-      { "name": "Egg", "quantity": "600g" },
-      { "name": "Flour", "quantity": "3" },
-      { "name": "Instant Yeast", "quantity": "3" },
-      { "name": "Sugar", "quantity": "3" },
-      { "name": "Salt", "quantity": "600g" },
-      { "name": "Water", "quantity": "3" },
-      { "name": "Filling", "quantity": "3" },
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Cinnamon", "quantity": "3" },
-      { "name": "Brown Sugar", "quantity": "3" },
-      { "name": "Milk Syrup", "quantity": "3" }
-    ],
-    "method": ["", "", ""],
-    "aproved": "false",
-    "catigories": ["dessert"]
-  },
-  {
-    "id": "1",
+    "id": "26",
     "title": "Tarte",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Butter", "quantity": "3" },
-      { "name": "Milk", "quantity": "600g" }
+      {
+        "name": "Butter",
+        "quantity": "g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "600g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "27",
     "title": "Equlaire",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Choux", "quantity": "3" },
-      { "name": "Cream Patisier", "quantity": "600g" },
-      { "name": "Chocolate 50%", "quantity": "600g" }
+      {
+        "name": "Choux",
+        "quantity": "Sub Recipe"
+      },
+      {
+        "name": "Cream Patisier",
+        "quantity": "Sub Recipe"
+      },
+      {
+        "name": "Chocolate 50%",
+        "quantity": "200g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "true",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "28",
     "title": "Profiterole",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Choux", "quantity": "3" },
-      { "name": "Whipped Whipping Cream", "quantity": "600g" },
-      { "name": "Topping fruit", "quantity": "600g" }
+      {
+        "name": "Choux",
+        "quantity": "Sub Recipe"
+      },
+      {
+        "name": "Whipped Whipping Cream",
+        "quantity": "Sub Recipe"
+      },
+      {
+        "name": "Topping fruit",
+        "quantity": "100g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "29",
     "title": "Paris Breast",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Choux", "quantity": "3" },
-      { "name": "Caramel", "quantity": "600g" },
-      { "name": "Cream Patisier", "quantity": "600g" }
+      {
+        "name": "Choux",
+        "quantity": "Sub Recipe"
+      },
+      {
+        "name": "Caramel",
+        "quantity": "50g"
+      },
+      {
+        "name": "Cream Patisier",
+        "quantity": "Sub Recipe"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "30",
     "title": "Pain per due",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Milk", "quantity": "3" },
-      { "name": "Whipping Cream", "quantity": "600g" },
-      { "name": "Egg", "quantity": "600g" },
-      { "name": "Cinnamon", "quantity": "600g" },
-      { "name": "Sugar", "quantity": "600g" },
-      { "name": "Pain per due", "quantity": "600g" }
+      {
+        "name": "Milk",
+        "quantity": "125g"
+      },
+      {
+        "name": "Whipping Cream",
+        "quantity": "250g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "1pcs"
+      },
+      {
+        "name": "Cinnamon",
+        "quantity": "3g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "30g"
+      },
+      {
+        "name": "Pain per due",
+        "quantity": "2 pcs"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "31",
+    "title": "Cinnamon Role",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Milk",
+        "quantity": "120g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "75g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "100g"
+      },
+      {
+        "name": "Flour",
+        "quantity": "560g"
+      },
+      {
+        "name": "Instant Yeast",
+        "quantity": "7g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "70g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "1 tsp"
+      },
+      {
+        "name": "Water",
+        "quantity": "60g"
+      },
+      {
+        "name": "Butter",
+        "quantity": "75g"
+      },
+      {
+        "name": "Brown Sugar",
+        "quantity": "150g"
+      },
+      {
+        "name": "Cinnamon",
+        "quantity": "20g"
+      },
+      {
+        "name": "Milk",
+        "quantity": "40ml"
+      },
+      {
+        "name": "Sugar Powder",
+        "quantity": "120g"
+      },
+      {
+        "name": "Cream Cheese",
+        "quantity": "115g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "32",
     "title": "Teramisu",
     "image": "https://placehold.jp/150x150.png",
     "ingredients": [
-      { "name": "Mascarpon", "quantity": "3" },
-      { "name": "Sugar", "quantity": "600g" },
-      { "name": "Espresso Shot", "quantity": "600g" },
-      { "name": "Cacao", "quantity": "600g" },
-      { "name": "Lady Finger", "quantity": "600g" }
+      {
+        "name": "Mascarpon",
+        "quantity": "g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "600g"
+      },
+      {
+        "name": "Espresso Shot",
+        "quantity": "600g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "600g"
+      },
+      {
+        "name": "Lady Finger",
+        "quantity": "600g"
+      }
     ],
-    "method": ["", "", ""],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "33",
     "title": "Cream Brulei",
     "image": "https://placehold.jp/150x150.png",
-    "ingredients": [{ "name": "Sugar", "quantity": "600g" }],
-    "method": ["", "", ""],
+    "ingredients": [
+      {
+        "name": "Whipping Cream",
+        "quantity": "2 cups"
+      },
+      {
+        "name": "Egg Yolk",
+        "quantity": "5 pcs"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "0.5 cup"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "4g"
+      },
+      {
+        "name": "Salt",
+        "quantity": "2g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
   },
   {
-    "id": "1",
+    "id": "34",
     "title": "Caramel Flan",
     "image": "https://placehold.jp/150x150.png",
-    "ingredients": [{ "name": "Sugar", "quantity": "600g" }],
-    "method": ["", "", ""],
+    "ingredients": [
+      {
+        "name": "Sugar",
+        "quantity": "600g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
     "aproved": "false",
-    "catigories": ["dessert"]
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "35",
+    "title": "Cream Patisier",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Milk",
+        "quantity": "250g"
+      },
+      {
+        "name": "Egg",
+        "quantity": "1 pcs"
+      },
+      {
+        "name": "Corn Starsh",
+        "quantity": "25g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "60g"
+      },
+      {
+        "name": "Vanilla",
+        "quantity": "1 tbsp"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "36",
+    "title": "Mousse chocolate",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Egg White",
+        "quantity": "4 pcs"
+      },
+      {
+        "name": "Butter",
+        "quantity": "10g"
+      },
+      {
+        "name": "Sugar",
+        "quantity": "30g"
+      },
+      {
+        "name": "Chocolate 70%",
+        "quantity": "200g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "37",
+    "title": "Ganach",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Sugar",
+        "quantity": "600g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "38",
+    "title": "Chocolate Sauce",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Butter",
+        "quantity": ""
+      },
+      {
+        "name": "Sugar",
+        "quantity": ""
+      },
+      {
+        "name": "Cacao",
+        "quantity": ""
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "39",
+    "title": "Mirror Glaze",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Sugar",
+        "quantity": "600g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "40",
+    "title": "Butter Cream",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Sugar",
+        "quantity": "600g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "41",
+    "title": "Butter Cream",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Cream Cheese",
+        "quantity": "200g"
+      },
+      {
+        "name": "Whipping Cream",
+        "quantity": "250g"
+      },
+      {
+        "name": "Sugar Powder",
+        "quantity": "140g"
+      },
+      {
+        "name": "Cacao",
+        "quantity": "50g"
+      },
+      {
+        "name": "Dark Chocolate",
+        "quantity": "100g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "44",
+    "title": "Gilato",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Sugar",
+        "quantity": "600g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "45",
+    "title": "Caviar Fruits",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Agar Agar",
+        "quantity": "2g"
+      },
+      {
+        "name": "Juice",
+        "quantity": "100g"
+      },
+      {
+        "name": "Sunflower Oil",
+        "quantity": "Cold Cup"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "50",
+    "title": "Pizza dough",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": "2g"
+      },
+      {
+        "name": "Water",
+        "quantity": "100g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "51",
+    "title": "Tortilla",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": "2g"
+      },
+      {
+        "name": "Water",
+        "quantity": "100g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "52",
+    "title": "Pita",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": "2g"
+      },
+      {
+        "name": "Water",
+        "quantity": "100g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "53",
+    "title": "Salt Bread",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": "2g"
+      },
+      {
+        "name": "Water",
+        "quantity": "100g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
+  },
+  {
+    "id": "54",
+    "title": "Buger Bun",
+    "image": "https://placehold.jp/150x150.png",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "quantity": "2g"
+      },
+      {
+        "name": "Water",
+        "quantity": "100g"
+      }
+    ],
+    "method": [
+      "",
+      "",
+      ""
+    ],
+    "aproved": "false",
+    "catigories": [
+      "dessert"
+    ]
   }
 ]

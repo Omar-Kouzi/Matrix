@@ -6,12 +6,14 @@ let id = sessionStorage.getItem("recipeID");
 fetch("./code/assets/data.json")
   .then((response) => response.json())
   .then((data) => {
-    recipeData = data;
+    // get locally added recipes
+    const localRecipes = JSON.parse(localStorage.getItem("recipes")) || [];
 
-    // Find index instead of just recipe
-    currentIndex = recipeData.findIndex(
-      (recipe) => recipe.id == id
-    );
+    // merge both
+    recipeData = [...data, ...localRecipes];
+
+    // Find index
+    currentIndex = recipeData.findIndex((recipe) => recipe.id == id);
 
     if (currentIndex !== -1) {
       displayRecipe(recipeData[currentIndex]);
@@ -21,28 +23,36 @@ fetch("./code/assets/data.json")
   })
   .catch((error) => console.error("Error fetching data:", error));
 
-
 // ================= NAVIGATION =================
-
 function increasePage() {
   if (currentIndex < recipeData.length - 1) {
     currentIndex++;
-    displayRecipe(recipeData[currentIndex]);
+
+    const recipe = recipeData[currentIndex];
+
+    sessionStorage.setItem("recipeID", recipe.id);
+
+    displayRecipe(recipe);
   }
 }
 
 function decreasePage() {
   if (currentIndex > 0) {
     currentIndex--;
-    displayRecipe(recipeData[currentIndex]);
+
+    const recipe = recipeData[currentIndex];
+
+    sessionStorage.setItem("recipeID", recipe.id);
+
+    displayRecipe(recipe);
   }
 }
-
 
 // ================= DISPLAY =================
 
 function displayRecipe(recipe) {
   const recipeContainer = document.getElementById("recipeContainer");
+
   if (!recipeContainer) return;
 
   recipeContainer.innerHTML = "";
@@ -50,7 +60,7 @@ function displayRecipe(recipe) {
   const recipeElement = document.createElement("div");
 
   recipeElement.innerHTML = `
-  <div>
+  <div class="recipe-Container">
     <section>
       <h1 class="Recipe-Title">${recipe.title}</h1>
       <hr />
@@ -64,37 +74,56 @@ function displayRecipe(recipe) {
             <th>Measurements</th>
           </tr>
         </thead>
+
         <tbody>
-          ${recipe.ingredients.map(item => `
+          ${(recipe.ingredients || [])
+            .map(
+              (item) => `
             <tr>
-              <td>${item.name}</td>
-              <td>${item.quantity}</td>
+              <td>${item.name || ""}</td>
+              <td>${item.quantity || ""}</td>
             </tr>
-          `).join("")}
+          `,
+            )
+            .join("")}
         </tbody>
       </table>
 
-      <img src="${recipe.image}" alt="${recipe.title}" class="Mise-En-Place-img" />
+      <img 
+        src="${recipe.image || "https://placehold.jp/150x150.png"}" 
+        alt="${recipe.title}"
+        class="Mise-En-Place-img"
+      />
     </section>
 
     <section class="Method">
       <h2>Method</h2>
+      <hr/>
 
-      ${recipe.method.map(step => `
-        <p   class="Method-step">
-          ${step}
+      ${(recipe.method || [])
+        .map(
+          (step) => `
+        <p class="Method-step">
+          ${step || ""}
         </p>
-      `).join("")}
+      `,
+        )
+        .join("")}
 
-      <div class="page-controls">
-        <hr />
-        <div class="quantity-control">
-          <button onclick="decreasePage()">-</button>
-          <p class="page"><b>${recipe.id}</b></p>
-          <button onclick="increasePage()">+</button>
+        </section>
+        <div class="page-controls">
+          <hr />
+  
+          <div class="quantity-control">
+            <button onclick="decreasePage()">←</button>
+  
+            <p class="page">
+              <b>${currentIndex + 1} / ${recipeData.length}</b>          
+            </p>
+  
+            <button onclick="increasePage()">→</button>
+          </div>
         </div>
-      </div>
-    </section>
   </div>
   `;
 

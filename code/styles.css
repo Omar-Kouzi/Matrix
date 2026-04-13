@@ -2,8 +2,9 @@
 @import url(./css/home.css);
 @import url(./css/recipes.css);
 @import url(./css/recipe.css);
-@import url(./css/contact.css);
-@import url(./css/about.css);
+@import url(./css/addRecipe.css );
+/* @import url(./css/contact.css);
+@import url(./css/about.css); */
 /* components styles */
 @import url(./css/componentsCss/navbar.css);
 @import url(./css/componentsCss/footer.css);
@@ -41,8 +42,8 @@
   margin: 0;
   /* border: 1px solid; */
 }
-#main-content {
-  height: 100vh;
+#mainContent {
+  min-height: 100vh;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -92,4 +93,7 @@ button:hover {
 #mainContent{
   background-color: var(--background);
   color: var(--text);
+}
+body{
+  background-color: #0a0507;
 }
