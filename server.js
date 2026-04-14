@@ -4,48 +4,78 @@ const cors = require("cors");
 
 const app = express();
 
+// ✅ MIDDLEWARE
 app.use(cors());
 app.use(express.json());
 app.use(express.static("./"));
 
 const DATA_FILE = "./code/assets/data.json";
 
+// ✅ SAFE READ FUNCTION
+function readData() {
+  try {
+    if (!fs.existsSync(DATA_FILE)) return [];
+    const data = fs.readFileSync(DATA_FILE);
+    return JSON.parse(data || "[]");
+  } catch (err) {
+    console.error("Read error:", err);
+    return [];
+  }
+}
+
+// ✅ SAFE WRITE FUNCTION
+function writeData(data) {
+  try {
+    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+  } catch (err) {
+    console.error("Write error:", err);
+  }
+}
+
 // ================= GET =================
 app.get("/recipes", (req, res) => {
-  const data = fs.readFileSync(DATA_FILE);
-  res.json(JSON.parse(data));
+  res.json(readData());
 });
 
 // ================= ADD =================
 app.post("/recipes", (req, res) => {
-  const newRecipe = req.body;
+  try {
+    const newRecipe = req.body;
 
-  const data = JSON.parse(fs.readFileSync(DATA_FILE));
-  data.push(newRecipe);
+    const data = readData();
+    data.push(newRecipe);
 
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+    writeData(data);
 
-  res.json({ success: true });
+    res.json({ success: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to add recipe" });
+  }
 });
 
 // ================= UPDATE =================
 app.post("/recipes/update", (req, res) => {
-  const updated = req.body;
+  try {
+    const updated = req.body;
 
-  const data = JSON.parse(fs.readFileSync(DATA_FILE));
+    const data = readData();
+    const index = data.findIndex((r) => r.id == updated.id);
 
-  const index = data.findIndex((r) => r.id == updated.id);
+    if (index !== -1) {
+      data[index] = updated;
+      writeData(data);
+      return res.json({ success: true });
+    }
 
-  if (index !== -1) {
-    data[index] = updated;
+    res.status(404).json({ error: "Recipe not found" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Update failed" });
   }
-
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-
-  res.json({ success: true });
 });
 
-// 🔥 IMPORTANT FOR RENDER
+// ================= PORT =================
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

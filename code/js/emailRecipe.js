@@ -1,4 +1,8 @@
 (function () {
+  if (!window.emailjs) {
+    console.error("EmailJS not loaded ❌");
+    return;
+  }
 
   const defaultImage = "https://placehold.jp/150x150.png";
 
@@ -9,14 +13,10 @@
   const imagePreview = document.getElementById("imagePreview");
 
   // ================= INGREDIENT =================
-  document.getElementById("emailIngredientBtn").onclick = () => {
-    addIngredientRow();
-  };
+  document.getElementById("emailIngredientBtn").onclick = () => addIngredientRow();
 
   function addIngredientRow(name = "", qty = "") {
     const row = document.createElement("div");
-
-    row.className = "ingredient-row";
 
     row.innerHTML = `
       <input class="ingredient-name" placeholder="Ingredient" value="${name}" />
@@ -25,21 +25,16 @@
     `;
 
     row.querySelector("button").onclick = () => row.remove();
-
     ingredientsContainer.appendChild(row);
   }
 
   addIngredientRow();
 
   // ================= METHOD =================
-  document.getElementById("emailMethodBtn").onclick = () => {
-    addMethodRow();
-  };
+  document.getElementById("emailMethodBtn").onclick = () => addMethodRow();
 
   function addMethodRow(step = "") {
     const row = document.createElement("div");
-
-    row.className = "method-row";
 
     row.innerHTML = `
       <input class="method-step" placeholder="Step" value="${step}" />
@@ -47,7 +42,6 @@
     `;
 
     row.querySelector("button").onclick = () => row.remove();
-
     methodContainer.appendChild(row);
   }
 
@@ -65,56 +59,56 @@
   });
 
   // ================= SUBMIT =================
-  document.getElementById("emailRecipeForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+  document
+    .getElementById("emailRecipeForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    const id = document.getElementById("recipeID").value.trim();
-    const title = document.getElementById("form-title").value.trim();
-    const approved = document.getElementById("approved").checked;
+      const id = document.getElementById("recipeID").value.trim();
+      const title = document.getElementById("form-title").value.trim();
+      const approved = document.getElementById("approved").checked;
 
-    let image = defaultImage;
-    if (imageFile.files[0]) image = imagePreview.src;
+      let image = defaultImage;
+      if (imageFile.files[0]) image = imagePreview.src;
 
-    // INGREDIENTS
-    const ingredients = [];
-    document.querySelectorAll(".ingredient-row").forEach((row) => {
-      const name = row.querySelector(".ingredient-name").value.trim();
-      const qty = row.querySelector(".ingredient-qty").value.trim();
+      const ingredients = [];
+      document.querySelectorAll(".ingredient-row").forEach((row) => {
+        const name = row.querySelector(".ingredient-name").value.trim();
+        const qty = row.querySelector(".ingredient-qty").value.trim();
 
-      if (name) {
-        ingredients.push({ name, quantity: qty });
-      }
+        if (name) {
+          ingredients.push({ name, quantity: qty });
+        }
+      });
+
+      const method = [];
+      document.querySelectorAll(".method-row").forEach((row) => {
+        const step = row.querySelector(".method-step").value.trim();
+        if (step) method.push(step);
+      });
+
+      const recipeJSON = {
+        id: id || Date.now().toString(),
+        title,
+        image,
+        ingredients,
+        method,
+        aproved: approved ? "true" : "false",
+        catigories: ["dessert"],
+      };
+
+      // ✅ SEND EMAIL (ONE TIME ONLY)
+      emailjs
+        .send("service_nkclw4q", "template_5oyyll8", {
+          message: JSON.stringify(recipeJSON, null, 2),
+        })
+        .then(() => {
+          alert("Recipe sent ✅");
+          document.getElementById("emailRecipeForm").reset();
+        })
+        .catch((err) => {
+          console.error(err);
+          alert("Failed ❌");
+        });
     });
-
-    // METHOD
-    const method = [];
-    document.querySelectorAll(".method-row").forEach((row) => {
-      const step = row.querySelector(".method-step").value.trim();
-      if (step) method.push(step);
-    });
-
-    const recipeJSON = {
-      id: id || Date.now().toString(),
-      title,
-      image,
-      ingredients,
-      method,
-      aproved: approved ? "true" : "false",
-      catigories: ["dessert"],
-    };
-
-    // ✅ SEND EMAIL
-    emailjs.send("service_nkclw4q", "template_5oyyll8", {
-      message: JSON.stringify(recipeJSON, null, 2),
-    })
-    .then(() => {
-      alert("Recipe sent ✅");
-    })
-    .catch((err) => {
-      console.error(err);
-      alert("Failed ❌");
-    });
-
-  });
-
 })();

@@ -1,7 +1,7 @@
 (function () {
   let recipesData = [];
 
-  fetch("https://matrix-9w7t.onrender.com/recipes")
+  fetch("/recipes")
     .then((res) => res.json())
     .then((data) => {
       recipesData = data;

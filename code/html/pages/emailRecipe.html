@@ -2,11 +2,15 @@
   <h2>Email Recipe</h2>
 
   <form id="emailRecipeForm">
-    <input type="text" id="recipeID" placeholder="Recipe ID (optional)" />
+    <label>Recipe ID (optional)</label>
+    <input type="text" id="recipeID" />
 
-    <input type="text" id="form-title" placeholder="Recipe Title" required />
+    <label>Recipe Title</label>
+    <input type="text" id="form-title" required />
 
+    <label>Image</label>
     <input type="file" id="imageFile" />
+    <br />
     <img id="imagePreview" src="https://placehold.jp/150x150.png" width="150" />
 
     <h4>Ingredients</h4>

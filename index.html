@@ -1,82 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./code/styles.css" />
-    <title>E-commerce</title>
-  </head>
-  <body>
-    <nav id="navPlaceholder"></nav>
-    <main id="mainContent"></main>
-    <footer id="footerPlaceholder"></footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" href="/code/styles.css" />
+  <title>Matrix</title>
+</head>
 
-    <!-- ✅ ONLY THIS EMAILJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<body>
+  <nav id="navPlaceholder"></nav>
+  <main id="mainContent"></main>
+  <footer id="footerPlaceholder"></footer>
 
-    <script>
-      // ✅ INIT ONCE GLOBALLY
-      emailjs.init({
-        publicKey: "zjNMLo6UJA4DbYfID",
-      });
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-      console.log("EmailJS initialized ✅");
-    </script>
-    <script>
-      $(function () {
-        $("#navPlaceholder").load(
-          "./code/html/components/navbar.html",
-          function () {
-            highlightActiveLink();
-          },
-        );
-        $("#footerPlaceholder").load(
-          "./code/html/components/footer.html",
-          function () {
-            highlightActiveLink();
-          },
-        );
+  <script>
+    emailjs.init({ publicKey: "zjNMLo6UJA4DbYfID" });
 
-        function loadContent() {
-          let page = sessionStorage.id || "recipes";
-          let pageUrl = `./code/html/pages/${page}.html`;
+    $(function () {
+      $("#navPlaceholder").load("/code/html/components/navbar.html");
+      $("#footerPlaceholder").load("/code/html/components/footer.html");
 
-          $("#mainContent").load(pageUrl, function () {
-            // 🔥 RUN PAGE JS MANUALLY
-            loadPageScript(page);
-          });
-        }
-        loadContent();
-
-        $(document).on("click", ".nava", function (e) {
-          let targetPage = $(this).data("page");
-          sessionStorage.id = targetPage;
-          loadContent();
-          highlightActiveLink();
-          e.preventDefault();
+      function loadContent() {
+        let page = sessionStorage.id || "recipes";
+        $("#mainContent").load(`/code/html/pages/${page}.html`, function () {
+          loadPageScript(page);
         });
+      }
 
-        function highlightActiveLink() {
-          let activePage = sessionStorage.id || "recipes";
-          $(".nava").removeClass("active");
-          $(`.nava[data-page='${activePage}']`).addClass("active");
-        }
-        function loadPageScript(page) {
-          // remove old script
-          const oldScript = document.getElementById("pageScript");
-          if (oldScript) oldScript.remove();
+      loadContent();
 
-          const script = document.createElement("script");
-          script.id = "pageScript";
-
-          script.src = `./code/js/${page}.js?v=${Date.now()}`; // cache bust
-
-          document.body.appendChild(script);
-        }
+      $(document).on("click", ".nava", function (e) {
+        e.preventDefault();
+        sessionStorage.id = $(this).data("page");
+        loadContent();
       });
-    </script>
-  </body>
+
+      function loadPageScript(page) {
+        const oldScript = document.getElementById("pageScript");
+        if (oldScript) oldScript.remove();
+
+        const script = document.createElement("script");
+        script.id = "pageScript";
+        script.src = `/code/js/${page}.js?v=${Date.now()}`;
+        document.body.appendChild(script);
+      }
+    });
+  </script>
+</body>
 </html>
