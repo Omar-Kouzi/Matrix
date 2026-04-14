@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "connect-livereload": "^0.6.1",
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "livereload": "^0.10.3"
   },
