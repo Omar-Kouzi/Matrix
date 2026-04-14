@@ -1,150 +1,107 @@
-let recipesData = [];
+(function () {
+  let recipesData = [];
 
-fetch("/recipes")
-  .then((response) => response.json())
-  .then((data) => {
-    recipesData = data;
-    displayRecipes(recipesData);
-  })
-  .catch((error) =>
-    console.error("Error fetching data:", error)
-  );
+  fetch("/recipes")
+    .then((res) => res.json())
+    .then((data) => {
+      recipesData = data;
+      displayRecipes(recipesData);
+    });
 
-function GotoRecipe(recipeid) {
-  sessionStorage.recipeID = recipeid;
-  console.log(recipeid);
-}
+  function GotoRecipe(recipeid) {
+    sessionStorage.recipeID = recipeid;
+  }
 
-function displayRecipes(recipes) {
-  const recipesContainer =
-    document.getElementById("recipesContainer");
+  // DISPLAY
+  function displayRecipes(recipes) {
+    const container = document.getElementById("recipesContainer");
+    container.innerHTML = "";
 
-  recipesContainer.innerHTML = "";
+    recipes.forEach((recipe) => {
+      const card = document.createElement("div");
+      card.id = "recipe";
 
-  recipes.forEach((recipe) => {
-    const recipeCard = document.createElement("div");
-    recipeCard.id = "recipe";
+      card.classList.add(recipe.aproved === "true" ? "aproved" : "not-aproved");
 
-    if (recipe.aproved === "true") {
-      recipeCard.classList.add("aproved");
-    } else {
-      recipeCard.classList.add("not-aproved");
-    }
-
-    recipeCard.innerHTML = `
+      card.innerHTML = `
       <div class="recipeimg-container">
-        <img 
-          src="${recipe.image || 'https://placehold.jp/150x150.png'}" 
-          alt="img" 
-          class="recipeimg" 
-        />
+        <img src="${recipe.image || "https://placehold.jp/150x150.png"}" class="recipeimg"/>
       </div>
 
       <h5>${recipe.title}</h5>
-    
-      <button>    
-        <a 
-          href="../pages/recipe.html" 
-          class="nava" 
-          data-page="recipe" 
-          onClick="GotoRecipe('${recipe.id}')"
-        >
-          Buy Now
+
+      <button>
+        <a href="../pages/recipe.html"
+           class="nava"
+           data-page="recipe">
+           View
         </a>
       </button>
     `;
 
-    recipesContainer.appendChild(recipeCard);
-  });
-}
+      card.querySelector("a").onclick = () => {
+        GotoRecipe(recipe.id);
+      };
 
-
-// ================= FILTER =================
-
-function filterAndSortRecipes() {
-  const searchTerm = document
-    .getElementById("filterInput")
-    .value.toLowerCase()
-    .trim();
-
-  const sortMethod =
-    document.getElementById("sortSelect").value;
-
-  const aprovedFilter =
-    document.getElementById("aprovedFilter").checked;
-
-  let filteredRecipes =
-    recipesData.filter((recipe) => {
-
-      const titleMatch =
-        recipe.title
-          .toLowerCase()
-          .includes(searchTerm);
-
-      const ingredientMatch =
-        recipe.ingredients?.some((ing) =>
-          ing.name
-            .toLowerCase()
-            .includes(searchTerm)
-        );
-
-      const matchesSearchTerm =
-        titleMatch || ingredientMatch;
-
-      const matchesaprovedFilter =
-        aprovedFilter
-          ? recipe.aproved === "true"
-          : true;
-
-      return (
-        matchesSearchTerm &&
-        matchesaprovedFilter
-      );
+      container.appendChild(card);
     });
-
-  switch (sortMethod) {
-    case "az":
-      filteredRecipes.sort((a, b) =>
-        a.title.localeCompare(b.title)
-      );
-      break;
-
-    case "za":
-      filteredRecipes.sort((a, b) =>
-        b.title.localeCompare(a.title)
-      );
-      break;
-
-    case "aproved":
-      filteredRecipes.sort((a, b) => {
-        return (
-          (a.aproved === "false") -
-          (b.aproved === "false")
-        );
-      });
-      break;
   }
 
-  displayRecipes(filteredRecipes);
-}
+  // FILTER
+  function filterAndSortRecipes() {
+    const searchTerm = document
+      .getElementById("filterInput")
+      .value.toLowerCase()
+      .trim();
 
+    const sortMethod = document.getElementById("sortSelect").value;
 
-// events
-document
-  .getElementById("searchForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+    const aprovedFilter = document.getElementById("aprovedFilter").checked;
+
+    let filtered = recipesData.filter((recipe) => {
+      const titleMatch = recipe.title.toLowerCase().includes(searchTerm);
+
+      const ingredientMatch = recipe.ingredients?.some((i) =>
+        i.name.toLowerCase().includes(searchTerm),
+      );
+
+      const matchesSearch = titleMatch || ingredientMatch;
+
+      const matchesApproved = aprovedFilter ? recipe.aproved === "true" : true;
+
+      return matchesSearch && matchesApproved;
+    });
+
+    // SORT
+    if (sortMethod === "az")
+      filtered.sort((a, b) => a.title.localeCompare(b.title));
+
+    if (sortMethod === "za")
+      filtered.sort((a, b) => b.title.localeCompare(a.title));
+
+    if (sortMethod === "aproved")
+      filtered.sort(
+        (a, b) => (a.aproved === "false") - (b.aproved === "false"),
+      );
+
+    displayRecipes(filtered);
+  }
+
+  // EVENTS
+  document.getElementById("searchForm").addEventListener("submit", (e) => {
+    e.preventDefault();
     filterAndSortRecipes();
   });
 
-document
-  .getElementById("sortSelect")
-  .addEventListener("change", filterAndSortRecipes);
+  document
+    .getElementById("sortSelect")
+    .addEventListener("change", filterAndSortRecipes);
 
-document
-  .getElementById("aprovedFilter")
-  .addEventListener("change", filterAndSortRecipes);
+  document
+    .getElementById("aprovedFilter")
+    .addEventListener("change", filterAndSortRecipes);
 
-document
-  .getElementById("filterInput")
-  .addEventListener("input", filterAndSortRecipes);
+  document
+    .getElementById("filterInput")
+    .addEventListener("input", filterAndSortRecipes);
+})();

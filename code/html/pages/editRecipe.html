@@ -3,7 +3,6 @@
 
   <div class="search-bar">
     <input type="text" id="editSearch" placeholder="Search recipe..." />
-
     <button type="button" id="searchRecipeBtn">Search</button>
   </div>
 
@@ -14,6 +13,7 @@
   <form id="editRecipeForm">
     <input id="editID" type="hidden" />
 
+    <!-- 🔥 FIXED ID -->
     <input id="form-title" placeholder="Title" />
 
     <img id="imagePreview" src="https://placehold.jp/150x150.png" />
@@ -21,8 +21,10 @@
     <input type="file" id="imageFile" />
 
     <div id="ingredientsContainer"></div>
-
     <button type="button" id="addIngredientBtn">+ Ingredient</button>
+
+    <div id="methodContainer"></div>
+    <button type="button" id="addMethodBtn">+ Add Method</button>
 
     <label>
       Approved

@@ -1,199 +1,183 @@
-let recipesData = [];
+(function () {
+  let recipesData = [];
 
-const defaultImage = "https://placehold.jp/150x150.png";
+  const defaultImage = "https://placehold.jp/150x150.png";
 
-const searchInput = document.getElementById("editSearch");
-const resultsBox = document.getElementById("editSearchResults");
+  const searchInput = document.getElementById("editSearch");
+  const resultsBox = document.getElementById("editSearchResults");
 
-const ingredientsContainer = document.getElementById("ingredientsContainer");
+  const ingredientsContainer = document.getElementById("ingredientsContainer");
+  const methodContainer = document.getElementById("methodContainer");
 
-const imageFile = document.getElementById("imageFile");
+  const imageFile = document.getElementById("imageFile");
+  const imagePreview = document.getElementById("imagePreview");
 
-const imagePreview = document.getElementById("imagePreview");
+  // LOAD
+  fetch("/recipes")
+    .then((res) => res.json())
+    .then((data) => (recipesData = data));
 
-// ================= LOAD RECIPES =================
+  // SEARCH
+  document
+    .getElementById("searchRecipeBtn")
+    .addEventListener("click", searchRecipes);
 
-fetch("/recipes")
-  .then((res) => res.json())
-  .then((data) => {
-    recipesData = data;
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      searchRecipes();
+    }
   });
 
-// ================= SEARCH BUTTON =================
-document
-  .getElementById("searchRecipeBtn")
-  .addEventListener("click", searchRecipes);
+  function searchRecipes() {
+    const term = searchInput.value.toLowerCase().trim();
 
-searchInput.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    searchRecipes();
+    const results = recipesData.filter((r) =>
+      r.title.toLowerCase().includes(term),
+    );
+
+    displaySearchResults(results);
   }
-});
 
-function searchRecipes() {
-  const term = searchInput.value.toLowerCase().trim();
-
-  if (!term) {
+  function displaySearchResults(recipes) {
     resultsBox.innerHTML = "";
-    return;
-  }
 
-  const results = recipesData.filter((recipe) =>
-    recipe.title.toLowerCase().includes(term),
-  );
+    recipes.forEach((recipe) => {
+      const card = document.createElement("div");
 
-  displaySearchResults(results);
-}
-// ================= DISPLAY SEARCH RESULTS =================
-
-function displaySearchResults(recipes) {
-  resultsBox.innerHTML = "";
-
-  recipes.forEach((recipe) => {
-    const card = document.createElement("div");
-
-    card.id = "recipe";
-
-    card.innerHTML = `
-  <div class="recipeimg-container">
-        <img 
-          src="${recipe.image || "https://placehold.jp/150x150.png"}" 
-          alt="img" 
-          class="recipeimg" 
-        />
+      card.innerHTML = `
+      <div class="recipeimg-container">
+        <img src="${recipe.image || defaultImage}" class="recipeimg"/>
       </div>
 
       <h5>${recipe.title}</h5>
-    
-<button onclick="loadRecipeToForm('${recipe.id}')">
-Select
-      </button>
-</div>
-`;
 
-    resultsBox.appendChild(card);
-  });
-}
+      <button class="select-btn">Select</button>
+    `;
 
-// ================= LOAD TO FORM =================
+      card.querySelector(".select-btn").onclick = () => {
+        loadRecipeToForm(recipe.id);
+      };
 
-function loadRecipeToForm(id) {
-  const recipe = recipesData.find((r) => r.id == id);
-
-  if (!recipe) return;
-
-  document.getElementById("editID").value = recipe.id;
-
-  document.getElementById("title").value = recipe.title;
-
-  document.getElementById("approved").checked = recipe.aproved === "true";
-
-  imagePreview.src = recipe.image || defaultImage;
-
-  loadIngredients(recipe.ingredients || []);
-
-  // clear search
-  searchInput.value = "";
-  resultsBox.innerHTML = "";
-}
-
-// ================= INGREDIENTS =================
-
-document
-  .getElementById("addIngredientBtn")
-  .addEventListener("click", () => addIngredientRow());
-
-function addIngredientRow(name = "", qty = "") {
-  const row = document.createElement("div");
-
-  row.className = "ingredient-row";
-
-  row.innerHTML = `
-<input 
-class="ingredient-name"
-placeholder="Ingredient"
-value="${name}"
-/>
-
-<input 
-class="ingredient-qty"
-placeholder="Quantity"
-value="${qty}"
-/>
-
-<button type="button" class="remove">
-✖
-</button>
-`;
-
-  row.querySelector(".remove").onclick = () => row.remove();
-
-  ingredientsContainer.appendChild(row);
-}
-
-function loadIngredients(ingredients) {
-  ingredientsContainer.innerHTML = "";
-
-  ingredients.forEach((i) => addIngredientRow(i.name, i.quantity));
-}
-
-// ================= IMAGE PREVIEW =================
-
-imageFile.addEventListener("change", function () {
-  const file = this.files[0];
-
-  if (file) {
-    const reader = new FileReader();
-
-    reader.onload = (e) => (imagePreview.src = e.target.result);
-
-    reader.readAsDataURL(file);
-  }
-});
-
-// ================= SAVE =================
-
-document
-  .getElementById("editRecipeForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const id = document.getElementById("editID").value;
-
-    const title = document.getElementById("title").value;
-
-    const approved = document.getElementById("approved").checked;
-
-    const ingredients = [];
-
-    document.querySelectorAll(".ingredient-row").forEach((row) => {
-      ingredients.push({
-        name: row.querySelector(".ingredient-name").value,
-        quantity: row.querySelector(".ingredient-qty").value,
-      });
+      resultsBox.appendChild(card);
     });
+  }
 
-    const updatedRecipe = {
-      id,
-      title,
-      image: imagePreview.src,
-      ingredients,
+  // LOAD INTO FORM
+  function loadRecipeToForm(id) {
+    const recipe = recipesData.find((r) => r.id == id);
+    if (!recipe) return;
 
-      method: ["", "", ""],
+    document.getElementById("editID").value = recipe.id;
+    document.getElementById("form-title").value = recipe.title;
+    document.getElementById("approved").checked = recipe.aproved === "true";
 
-      aproved: approved ? "true" : "false",
+    imagePreview.src = recipe.image || defaultImage;
 
-      catigories: ["dessert"],
-    };
+    loadIngredients(recipe.ingredients || []);
+    loadMethods(recipe.method || []);
 
-    fetch("/recipes/update", {
-      method: "POST",
+    searchInput.value = "";
+    resultsBox.innerHTML = "";
+  }
 
-      headers: {
-        "Content-Type": "application/json",
-      },
+  // INGREDIENTS
+  document.getElementById("addIngredientBtn").onclick = () =>
+    addIngredientRow();
 
-      body: JSON.stringify(updatedRecipe),
-    }).then(() => alert("Recipe Updated ✅"));
+  function addIngredientRow(name = "", qty = "") {
+    const row = document.createElement("div");
+
+    row.className = "ingredient-row";
+
+    row.innerHTML = `
+    <input class="ingredient-name" value="${name}" />
+    <input class="ingredient-qty" value="${qty}" />
+    <button type="button">✖</button>
+  `;
+
+    row.querySelector("button").onclick = () => row.remove();
+
+    ingredientsContainer.appendChild(row);
+  }
+
+  function loadIngredients(ingredients) {
+    ingredientsContainer.innerHTML = "";
+    ingredients.forEach((i) => addIngredientRow(i.name, i.quantity));
+  }
+
+  // METHODS
+  document.getElementById("addMethodBtn").onclick = () => addMethodRow();
+
+  function addMethodRow(step = "") {
+    const row = document.createElement("div");
+
+    row.className = "method-row";
+
+    row.innerHTML = `
+    <input class="method-step" value="${step}" />
+    <button type="button">✖</button>
+  `;
+
+    row.querySelector("button").onclick = () => row.remove();
+
+    methodContainer.appendChild(row);
+  }
+
+  function loadMethods(method) {
+    methodContainer.innerHTML = "";
+    method.forEach((step) => addMethodRow(step));
+  }
+
+  // IMAGE
+  imageFile.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => (imagePreview.src = e.target.result);
+      reader.readAsDataURL(file);
+    }
   });
+
+  // SAVE
+  document
+    .getElementById("editRecipeForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const id = document.getElementById("editID").value;
+      const title = document.getElementById("form-title").value;
+      const approved = document.getElementById("approved").checked;
+
+      const ingredients = [];
+      document.querySelectorAll(".ingredient-row").forEach((row) => {
+        ingredients.push({
+          name: row.querySelector(".ingredient-name").value,
+          quantity: row.querySelector(".ingredient-qty").value,
+        });
+      });
+
+      const method = [];
+      document.querySelectorAll(".method-row").forEach((row) => {
+        const step = row.querySelector(".method-step").value.trim();
+        if (step) method.push(step);
+      });
+
+      const updatedRecipe = {
+        id,
+        title,
+        image: imagePreview.src,
+        ingredients,
+        method,
+        aproved: approved ? "true" : "false",
+        catigories: ["dessert"],
+      };
+
+      fetch("/recipes/update", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedRecipe),
+      }).then(() => alert("Updated ✅"));
+    });
+})();

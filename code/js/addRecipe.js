@@ -1,145 +1,121 @@
-let recipesData = [];
+(function () {
+
 const defaultImage = "https://placehold.jp/150x150.png";
 
 const ingredientsContainer = document.getElementById("ingredientsContainer");
-
-const addIngredientBtn = document.getElementById("addIngredientBtn");
 const methodContainer = document.getElementById("methodContainer");
 
+const addIngredientBtn = document.getElementById("addIngredientBtn");
 const addMethodBtn = document.getElementById("addMethodBtn");
 
 const imageFile = document.getElementById("imageFile");
-
 const imagePreview = document.getElementById("imagePreview");
 
-// ================= ADD INGREDIENT =================
-
-addIngredientBtn.addEventListener("click", addIngredientRow);
+// INGREDIENT
+addIngredientBtn.onclick = () => addIngredientRow();
 
 function addIngredientRow(name = "", qty = "") {
   const row = document.createElement("div");
   row.className = "ingredient-row";
 
   row.innerHTML = `
-    <input type="text" class="ingredient-name" placeholder="Ingredient" value="${name}" />
-    <input type="text" class="ingredient-qty" placeholder="Quantity" value="${qty}" />
-    <button type="button" class="removeIngredient">✖</button>
+    <input class="ingredient-name" value="${name}" placeholder="Ingredient"/>
+    <input class="ingredient-qty" value="${qty}" placeholder="Quantity"/>
+    <button type="button">✖</button>
   `;
 
-  row.querySelector(".removeIngredient").addEventListener("click", () => {
-    row.remove();
-  });
+  row.querySelector("button").onclick = () => row.remove();
 
   ingredientsContainer.appendChild(row);
 }
 
-// first row
 addIngredientRow();
-// ================= ADD METHOD =================
 
-addMethodBtn.addEventListener("click", addMethodRow);
+// METHOD
+addMethodBtn.onclick =() => addMethodRow();
 
 function addMethodRow(step = "") {
   const row = document.createElement("div");
   row.className = "method-row";
 
   row.innerHTML = `
-    <input type="text" class="method-step" placeholder="Method" value="${step}" />
-    <button type="button" class="removeMethod">✖</button>
+    <input class="method-step" value="${step}" placeholder="Step"/>
+    <button type="button">✖</button>
   `;
 
-  row.querySelector(".removeMethod").addEventListener("click", () => {
-    row.remove();
-  });
+  row.querySelector("button").onclick = () => row.remove();
 
   methodContainer.appendChild(row);
 }
 
-// first row
 addMethodRow();
 
-// ================= IMAGE PREVIEW =================
-
-imageFile.addEventListener("change", function () {
+// IMAGE
+imageFile.click = () => function () {
   const file = this.files[0];
 
   if (file) {
     const reader = new FileReader();
-
-    reader.onload = function (e) {
-      imagePreview.src = e.target.result;
-    };
-
+    reader.onload = (e) => imagePreview.src = e.target.result;
     reader.readAsDataURL(file);
   }
+};
+
+// SUBMIT
+document.getElementById("addRecipeForm")
+.addEventListener("submit", function (e) {
+
+  e.preventDefault();
+
+  const title = document.getElementById("title").value.trim();
+
+  let image = defaultImage;
+  if (imageFile.files[0]) image = imagePreview.src;
+
+  const approved = document.getElementById("approved").checked;
+
+  const ingredients = [];
+  document.querySelectorAll(".ingredient-row").forEach(row => {
+    const name = row.querySelector(".ingredient-name").value.trim();
+    const quantity = row.querySelector(".ingredient-qty").value.trim();
+    if (name) ingredients.push({ name, quantity });
+  });
+
+  const method = [];
+  document.querySelectorAll(".method-row").forEach(row => {
+    const step = row.querySelector(".method-step").value.trim();
+    if (step) method.push(step);
+  });
+
+  const newRecipe = {
+    id: Date.now().toString(),
+    title,
+    image,
+    ingredients,
+    method,
+    aproved: approved ? "true" : "false",
+    catigories: ["dessert"],
+  };
+
+  fetch("/recipes", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(newRecipe),
+  }).then(() => {
+
+    alert("Recipe Added ✅");
+
+    document.getElementById("addRecipeForm").reset();
+
+    ingredientsContainer.innerHTML = "";
+    methodContainer.innerHTML = "";
+
+    addIngredientRow();
+    addMethodRow();
+
+    imagePreview.src = defaultImage;
+  });
+
 });
 
-// ================= SUBMIT =================
-
-document
-  .getElementById("addRecipeForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const title = document.getElementById("title").value;
-
-    let image = defaultImage;
-
-    if (imageFile.files[0]) {
-      image = imagePreview.src;
-    }
-
-    const approved = document.getElementById("approved").checked;
-
-    const ingredients = [];
-
-    document.querySelectorAll(".ingredient-row").forEach((row) => {
-      const name = row.querySelector(".ingredient-name").value;
-
-      const quantity = row.querySelector(".ingredient-qty").value;
-
-      if (name.trim() !== "") {
-        ingredients.push({ name, quantity });
-      }
-    });
-    console.log(ingredients);
-    const method = [];
-
-    document.querySelectorAll(".method-row").forEach((row) => {
-      const step = row.querySelector(".method-step").value;
-
-      if (step.trim() !== "") {
-        method.push({ step });
-      }
-    });
-    const newRecipe = {
-      id: Date.now().toString(),
-      title,
-      image,
-      ingredients,
-      method,
-      aproved: approved ? "true" : "false",
-      catigories: ["dessert"],
-    };
-
-    // SEND TO SERVER
-    fetch("/recipes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newRecipe),
-    }).then(() => {
-      alert("Recipe Added ✅");
-
-      document.getElementById("addRecipeForm").reset();
-
-      ingredientsContainer.innerHTML = "";
-      methodContainerContainer.innerHTML = "";
-
-      addIngredientRow();
-      addMethodRow();
-
-      imagePreview.src = defaultImage;
-    });
-  });
+})();

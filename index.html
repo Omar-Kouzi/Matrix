@@ -13,6 +13,18 @@
     <footer id="footerPlaceholder"></footer>
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <!-- ✅ ONLY THIS EMAILJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+      // ✅ INIT ONCE GLOBALLY
+      emailjs.init({
+        publicKey: "zjNMLo6UJA4DbYfID",
+      });
+
+      console.log("EmailJS initialized ✅");
+    </script>
     <script>
       $(function () {
         $("#navPlaceholder").load(
@@ -53,13 +65,14 @@
           $(`.nava[data-page='${activePage}']`).addClass("active");
         }
         function loadPageScript(page) {
-          // remove old script if exists
-          $("#pageScript").remove();
+          // remove old script
+          const oldScript = document.getElementById("pageScript");
+          if (oldScript) oldScript.remove();
 
-          let script = document.createElement("script");
+          const script = document.createElement("script");
           script.id = "pageScript";
 
-          script.src = `./code/js/${page}.js`;
+          script.src = `./code/js/${page}.js?v=${Date.now()}`; // cache bust
 
           document.body.appendChild(script);
         }

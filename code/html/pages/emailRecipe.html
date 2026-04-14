@@ -1,0 +1,29 @@
+<section class="email-recipe">
+  <h2>Email Recipe</h2>
+
+  <form id="emailRecipeForm">
+    <input type="text" id="recipeID" placeholder="Recipe ID (optional)" />
+
+    <input type="text" id="form-title" placeholder="Recipe Title" required />
+
+    <input type="file" id="imageFile" />
+    <img id="imagePreview" src="https://placehold.jp/150x150.png" width="150" />
+
+    <h4>Ingredients</h4>
+    <div id="ingredientsContainer"></div>
+    <button type="button" id="emailIngredientBtn">+ Ingredient</button>
+
+    <h4>Method</h4>
+    <div id="methodContainer"></div>
+    <button type="button" id="emailMethodBtn">+ Step</button>
+
+    <label>
+      <input type="checkbox" id="approved" />
+      Approved
+    </label>
+
+    <br /><br />
+
+    <button type="submit">Send Recipe 📧</button>
+  </form>
+</section>
